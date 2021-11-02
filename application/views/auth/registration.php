@@ -11,18 +11,23 @@
                                 <strong class="lead">Login to your account</strong>
                             </div>
                         </div>
-                        <form class="user" action="index.php">
+                        <form class="user" method="post" action="<?= base_url('auth/registration'); ?>">
                             <div class="form-group">
                                 <!-- <label for="signin-email" class="control-label sr-only">Email</label> -->
-                                <input type="text" class="form-control form-control-user" id="name" name="name" placeholder="Enter your name">
+                                <input type="text" class="form-control form-control-user" id="name" name="name" placeholder="Enter your name" value="<?= set_value('name'); ?>">
+                                <?= form_error('name', '<small class="text-danger pl-3">', '</small>'); ?>
                             </div>
                             <div class="form-group">
                                 <!-- <label for="signin-password" class="control-label sr-only">Password</label> -->
-                                <input type="email" class="form-control form-control-user" id="email" name="email" placeholder="Enter your email address">
+                                <input type="email" class="form-control form-control-user" id="email" name="email" placeholder="Enter your email address" value="<?= set_value('email'); ?>">
+                                <?= form_error('email', '<small class="text-danger pl-3">', '</small>'); ?>
+
                             </div>
-                            <div class="form-group row">
+                            <div class=" form-group row">
                                 <div class="col-sm-6 mb-3 mb-sm-0">
                                     <input type="password" class="form-control form-control-user" id="password1" name="password1" placeholder="Enter Password">
+                                    <?= form_error('password1', '<small class="text-danger pl-3">', '</small>'); ?>
+
 
                                 </div>
                                 <!-- <label for="signin-password" class="control-label sr-only">Password</label> -->
