@@ -12,14 +12,18 @@
 
 						<?= $this->session->flashdata('message'); ?>
 
-						<form class="form-auth-small" action="index.php">
+						<form class="form-auth-small" method="post" action="<?= base_url('auth'); ?>">
 							<div class="form-group">
 								<label for="signin-email" class="control-label sr-only">Email</label>
-								<input type="text" class="form-control form-control-user" id="email" name="email" placeholder="Enter Email">
+								<input type="text" class="form-control form-control-user" id="email" name="email" placeholder="Enter Email" value="<?= set_value('email'); ?>">
+								<?= form_error('email', '<small class="text-danger pl-3">', '</small>'); ?>
+
 							</div>
 							<div class="form-group">
 								<label for="signin-password" class="control-label sr-only">Password</label>
-								<input type="password" class="form-control form-control-user" id="password" name="email" placeholder="Enter Password">
+								<input type="password" class="form-control form-control-user" id="password" name="password" placeholder="Enter Password">
+								<?= form_error('password', '<small class="text-danger pl-3">', '</small>'); ?>
+
 							</div>
 							<!-- <div class="form-group clearfix">
 									<label class="fancy-checkbox element-left">
